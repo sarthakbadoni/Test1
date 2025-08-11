@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Assignments Gallery</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root { --primary: #002349; --accent: #957C3D; --light: #FFFFFF; }
+  body {
+    margin: 0; font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--primary); color: var(--light);
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 30px 12px 60px; }
+  h1 {
+    text-align: center; margin-bottom: 28px; color: var(--light);
+    letter-spacing: 1px; position: relative;
+  }
+  h1::after {
+    content: ''; display: block; width: 80px; height: 4px;
+    background: var(--accent); margin: 10px auto 0; border-radius: 2px;
+  }
+  .assignments-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;
+  }
+  .assignment-item {
+    background: var(--light); border-radius: 14px; box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+    overflow: hidden; cursor: pointer; transition: transform 0.2s, box-shadow 0.25s;
+  }
+  .assignment-item:hover { transform: translateY(-5px); box-shadow: 0 10px 26px rgba(0,0,0,0.25); }
+  .assignment-thumb { width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #e8edf1; }
+  .assignment-info { padding: 14px 16px; color: var(--primary); }
+  .assignment-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 4px; }
+  .assignment-desc { font-size: 0.9rem; color: #415A77; }
+
+  /* Modal */
+  .modal {
+    display: none; position: fixed; z-index: 99; left: 0; top: 0;
+    width: 100vw; height: 100vh; background: rgba(0, 35, 73, 0.95);
+    justify-content: center; align-items: center; padding: 6vh 2vw;
+  }
+  .modal.active { display: flex; animation: fadeIn 0.25s; }
+  @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+
+  .modal-content {
+    max-width: 94vw; max-height: 76vh;
+    position: relative; display: flex; align-items: center; justify-content: center;
+  }
+  .modal-content img, .modal-content video {
+    max-height: 76vh; border-radius: 7px; background: #000; max-width: 100%;
+  }
+
+  /* Navigation + Close buttons */
+  .modal-prev, .modal-next, .modal-close {
+    position: absolute;
+    border: none;
+    color: var(--light);
+    cursor: pointer;
+    display: flex; justify-content: center; align-items: center;
+    border-radius: 50%; box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  }
+  .modal-prev, .modal-next {
+    top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    font-size: 2rem;
+    width: 50px; height: 50px;
+    transition: background 0.2s, transform 0.2s;
+    z-index: 5;
+  }
+  .modal-prev { left: 10px; }
+  .modal-next { right: 10px; }
+  .modal-prev:hover, .modal-next:hover {
+    background: rgba(149,124,61,0.8);
+    transform: translateY(-50%) scale(1.05);
+  }
+  .modal-close {
+    top: -16px; right: -16px;
+    background: var(--accent);
+    font-size: 1.5rem;
+    width: 40px; height: 40px;
+  }
+  .modal-close:hover { background: #b89043; }
+
+  @media(max-width:700px){
+    .modal-prev, .modal-next { width: 44px; height: 44px; font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>My Assignments</h1>
+  <div class="assignments-grid">
+    
+    <!-- Example with multiple local images -->
+    <div class="assignment-item" 
+         data-media='[{"type":"image","src":"Assets/Assignment/Linkedin1.png"},
+                      {"type":"image","src":"Assets/Assignment/Linkedin2.png"},
+                      {"type":"image","src":"Assets/Assignment/Linkedin3.png"}]'>
+      <img class="assignment-thumb" src="Assets/Assignment/Linkedin1.png" alt="">
+      <div class="assignment-info">
+        <div class="assignment-title">LinkedIn Profile</div>
+        <div class="assignment-desc">Create a professional LinkedIn profile showcasing your education, skills, achievements, and career interests. Ensure your profile photo, headline, and summary reflect a professional image, and include relevant experiences, projects, and certifications to enhance your online presence.
+</div>
+      </div>
+    </div>
+
+
+    <div class="assignment-item" 
+         data-media='[{"type":"image","src":"Assets/Assignment/Portfolio1.png"},
+                      {"type":"image","src":"Assets/Assignment/Portfolio2.png"}]'>
+      <img class="assignment-thumb" src="Assets/Assignment/Portfolio1.png" alt="">
+      <div class="assignment-info">
+        <div class="assignment-title">E-Portfolio</div>
+        <div class="assignment-desc">Create a E-Portfolio showcasing your education, skills, achievements, and career interests. Ensure your profile photo, headline, and summary reflect a professional image, and include relevant experiences, projects, and certifications to enhance your online presence.
+</div>
+      </div>
+    </div>
+
+    <!-- Example with multiple videos -->
+    <div class="assignment-item"
+         data-media='[{"type":"video","src":"Assets/rickroll.mp4"}]'>
+      <img class="assignment-thumb" src="Assets/IntroThumb.png" alt="">
+      <div class="assignment-info">
+        <div class="assignment-title">Self Introduction Video</div>
+        <div class="assignment-desc">Self Introduction</div>
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal-viewer">
+  <div class="modal-content" id="modal-content">
+    <button class="modal-prev" id="modal-prev">&#10094;</button>
+    <!-- Media gets injected here -->
+    <button class="modal-next" id="modal-next">&#10095;</button>
+  </div>
+  <button class="modal-close" id="modal-close">&times;</button>
+</div>
+
+<script>
+let currentIndex = 0;
+let currentMedia = [];
+
+const items = document.querySelectorAll('.assignment-item');
+const modal = document.getElementById('modal-viewer');
+const content = document.getElementById('modal-content');
+const btnClose = document.getElementById('modal-close');
+const btnPrev = document.getElementById('modal-prev');
+const btnNext = document.getElementById('modal-next');
+
+items.forEach(item => {
+  item.addEventListener('click', () => {
+    currentMedia = JSON.parse(item.dataset.media);
+    currentIndex = 0;
+    openMedia(currentIndex);
+    modal.classList.add('active');
+  });
+});
+
+function openMedia(index){
+  // Keep prev/next buttons in place
+  [...content.querySelectorAll('img,video')].forEach(el => el.remove());
+  let media = currentMedia[index];
+  let el;
+  if(media.type === 'video'){
+    el = document.createElement('video');
+    el.controls = true;
+    el.autoplay = true;
+    el.src = media.src;
+  } else {
+    el = document.createElement('img');
+    el.src = media.src;
+  }
+  content.insertBefore(el, btnNext); // Insert before the next button so buttons remain on sides
+}
+
+btnClose.addEventListener('click', closeModal);
+function closeModal(){
+  let v = content.querySelector('video');
+  if(v) v.pause();
+  modal.classList.remove('active');
+}
+btnPrev.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + currentMedia.length) % currentMedia.length;
+  openMedia(currentIndex);
+});
+btnNext.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % currentMedia.length;
+  openMedia(currentIndex);
+});
+modal.addEventListener('click', e => { if(e.target === modal) closeModal(); });
+document.addEventListener('keydown', e=>{
+  if(e.key==="Escape") closeModal();
+  if(e.key==="ArrowRight") btnNext.click();
+  if(e.key==="ArrowLeft") btnPrev.click();
+});
+</script>
+
+</body>
+</html>

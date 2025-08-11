@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Sarthak Badoni</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(160deg, #88ABB5, #5A7A8C);
+            color: #fff;
+        }
+        header {
+            background-color: #232323;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            color: #fff;
+            font-size: 2.2rem;
+        }
+        .contact-section {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            border-radius: 15px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+        }
+        .contact-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .contact-header h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        .contact-info {
+            flex: 1;
+            min-width: 280px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .contact-info p {
+            margin: 0;
+            font-size: 1rem;
+            opacity: 0.9;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .contact-info strong {
+            font-weight: 700;
+            color: #fff;
+            min-width: unset;
+            text-align: left;
+            letter-spacing: 0.5px;
+        }
+        .contact-form {
+            flex: 1;
+            min-width: 280px;
+        }
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            padding: 12px 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+        }
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .contact-form button {
+            padding: 12px;
+            background-color: #232323;
+            color: #fff;
+            border: none;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .contact-form button:hover {
+            background-color: #445c64;
+        }
+        .site-footer {
+            background: linear-gradient(160deg, #232323, #445c64);
+            color: #fff;
+            padding-top: 40px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin-top: 60px;
+        }
+        .footer-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        .footer-left h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+        .footer-left p {
+            margin-top: 6px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            opacity: 0.8;
+        }
+        .footer-nav a {
+            display: inline-block;
+            margin: 4px 10px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+        .footer-nav a:hover {
+            color: #88ABB5;
+        }
+        .footer-social a .icon {
+            width: 20px;
+            height: 20px;
+            margin: 0 8px;
+            vertical-align: middle;
+            transition: opacity 0.2s ease;
+        }
+        .footer-social a:hover .icon {
+            opacity: 0.8;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.85rem;
+            opacity: 0.7;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            .contact-container {
+                flex-direction: column;
+            }
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Contact Me</h1>
+</header>
+<section class="contact-section">
+    <div class="contact-header">
+        <h2>Get in Touch</h2>
+        <p>If you’d like to work together or just say hello, feel free to reach out!</p>
+    </div>
+    <div class="contact-container">
+        <div class="contact-info">
+            <p><strong>Email:</strong> sarthakbadoni.contact@gmail.com</p>
+            <p><strong>Phone:</strong> +91-9997538164</p>
+            <p><strong>Location:</strong> Dehradun, India</p>
+        </div>
+        <div class="contact-form">
+            <form action="https://formspree.io/f/xjkojokl" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required />
+                <input type="email" name="email" placeholder="Your Email" required />
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h3>Sarthak Badoni</h3>
+            <p>Building projects with passion & purpose.</p>
+        </div>
+        <div class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-social">
+            <a href="https://github.com/sarthakbadoni" target="_blank"><img src="Assets/github_w.png" alt="GitHub" class="icon"></a>
+            <a href="https://linkedin.com/in/sarthak-badoni-6a408b323" target="_blank"><img src="Assets/linkedin_w.png" alt="LinkedIn" class="icon"></a>
+            <a href="mailto:sarthakbadoni.contact@gmail.com"><img src="Assets/mail_w.png" alt="Email" class="icon"></a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2025 Sarthak Badoni. All rights reserved.
+    </div>
+</footer>
+</body>
+</html>

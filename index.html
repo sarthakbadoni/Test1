@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio: Sarthak Badoni</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .top {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 20px;
+            background: #002349;
+        }
+
+        .head1 {
+            margin: 0;
+            color: #fff;
+            font-size: 1.9rem;
+        }
+
+        .dropdown {
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 60px;
+            background: rgba(35, 35, 35, 0.95);
+            backdrop-filter: blur(6px);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+            z-index: 1000;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 18px;
+            color: #fff;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: background 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #88ABB5;
+        }
+
+        .dropdown-menu.show {
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .dropdown-menu {
+                right: 0;
+                top: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="top">
+        <h1 class="head1">Portfolio</h1>
+        <img src="Assets/menu.png" alt="Menu" class="dropdown" id="menuBtn">
+        <nav class="dropdown-menu" id="dropdownMenu">
+            <a href="#about">About Me</a>
+            <a href="#skills">Skills, Strengths & Weaknesses</a>
+            <a href="courses_and_certificates.html">Courses & Certifications</a>
+            <a href="assignments.html">Assignments</a>
+            <a href="projects.html">Projects</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+  <div class="ellipse-bg">
+    <div class="profile-section">
+      <img src="Assets/photo.jpg" class="profile-photo">
+      <p class="low">Hello, It’s Me</p>
+      <p class="high">Sarthak Badoni</p>
+      <p class="low">BTech CSE Undergrad<br>GEHU, Dehradun</p>
+    </div>
+  </div>
+
+  <div class="content">
+    <p>
+      Driven by curiosity and hands-on innovation, I turn fresh tech ideas into 
+      real-world solutions—collaborating, creating, and always learning. 
+      Let’s build something impactful together!
+    </p>
+
+    <div class="icons">
+      <a href="https://github.com/sarthakbadoni"><img src="Assets/github.png" alt="GitHub" class="icon"></a>
+      <a href="https://www.linkedin.com/in/sarthak-badoni-6a408b323/"><img src="Assets/linkedin.png" alt="LinkedIn" class="icon"></a>
+      <a href="https://www.instagram.com/sarthakbadoni937_/"><img src="Assets/insta.png" alt="Instagram" class="icon"></a>
+    </div>
+  </div>
+</div>
+
+<div class="contact-info">
+  <div class="contact-item">
+    <img src="Assets/mail.png" alt="Email" class="contact-icon">
+    <span class="contact-text">sarthakbadoni.contact@gmail.com</span>
+  </div>
+  <div class="contact-item">
+    <img src="Assets/phone.png" alt="Phone" class="contact-icon">
+    <span class="contact-text">+91 99975 38164</span>
+  </div>
+</div>
+
+<section class="about-section" id="about">
+    <div class="about-container">
+        <h2 class="about-title">About Me:</h2>
+        <div class="about-content">
+            <p class="about-text">
+                I am a passionate Computer Science Engineering undergraduate (Batch of 2028) from 
+                Dehradun, with a strong enthusiasm for hands-on learning, innovative projects, and 
+                technology exploration. My journey began early with creative problem-solving initiatives 
+                during school competitions and innovation events, where I developed practical solutions 
+                using Arduino and sensor-based systems.
+            </p>
+            <p class="about-text">
+                I thrive on taking part in hackathons and workshops, continuously expanding my knowledge 
+                in emerging fields such as Generative AI, web development, prompt engineering, and 
+                cybersecurity. Beyond tech, I nurture my creativity through drawing and other artistic 
+                pursuits, which helps me maintain a fresh perspective.
+            </p>
+            <p class="about-text">
+                Curiosity and collaboration drive my passion for technology, and I am always eager to 
+                transform ideas into impactful, real-world solutions.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="skills-section" id="skills">
+    <div class="skills-container">
+        <h2 class="skills-title">Skills, Strengths & Weaknesses</h2>
+        <div class="skills-content">
+
+            <!-- Strengths -->
+            <div class="skill-category">
+                <h3 class="category-title">Strengths:</h3>
+                <ul class="skills-list">
+                    <li>Innovative problem-solving with practical solutions</li>
+                    <li>Strong curiosity and eagerness to learn</li>
+                    <li>Effective teamwork in multidisciplinary project settings</li>
+                    <li>Critical thinking and adaptability in evolving tech environments</li>
+                    <li>Persistent and dedicated work ethic</li>
+                </ul>
+            </div>
+
+            <!-- Weaknesses -->
+            <div class="skill-category">
+                <h3 class="category-title">Weaknesses:</h3>
+                <ul class="skills-list">
+                    <li>I am a perfectionist, which can sometimes slow my work pace</li>
+                    <li>Tendency to overcommit to projects due to enthusiasm</li>
+                    <li>Occasional difficulty delegating tasks, preferring to handle them myself</li>
+                </ul>
+            </div>
+
+            <!-- Skills -->
+            <div class="skill-category">
+                <h3 class="category-title">Technical Skills:</h3>
+                <ul class="skills-list">
+                    <li>Arduino programming and sensor-based automation</li>
+                    <li>Web development fundamentals</li>
+                    <li>Project design and implementation in innovation events</li>
+                    <li>Hackathon participation with rapid problem-solving</li>
+                    <li>Workshop engagement for continuous technology learning</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<section class="quick-links-section">
+    <div class="quick-links-container">
+        <a href="courses_and_certificates.html" class="quick-link-card">
+            <img src="Assets/Certificate.jpg" alt="Courses & Certifications" class="quick-link-image" />
+            <div class="quick-link-title">Courses & Certifications</div>
+            <div class="quick-link-desc">Explore my completed courses and certifications.</div>
+        </a>
+        <a href="projects.html" class="quick-link-card">
+            <img src="Assets/project.jpg" alt="Projects" class="quick-link-image" />
+            <div class="quick-link-title">Projects</div>
+            <div class="quick-link-desc">Browse my personal, academic, and hackathon projects.</div>
+        </a>
+        <a href="gallery.html" class="quick-link-card">
+            <img src="Assets/gallery.jpg" alt="Gallery" class="quick-link-image" />
+            <div class="quick-link-title">Gallery</div>
+            <div class="quick-link-desc">See a gallery of achievements and work-in-action photos.</div>
+        </a>
+        <a href="assignments.html" class="quick-link-card">
+            <img src="Assets/assignment.jpg" alt="Assignments" class="quick-link-image" />
+            <div class="quick-link-title">Assignments</div>
+            <div class="quick-link-desc">See assignment photos and videos organized in one place.</div>
+        </a>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h3>Sarthak Badoni</h3>
+            <p>Building projects with passion & purpose.</p>
+        </div>
+        <div class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-social">
+            <a href="https://github.com/sarthakbadoni" target="_blank"><img src="Assets/github_w.png" alt="GitHub" class="icon"></a>
+            <a href="https://linkedin.com/in/sarthak-badoni-6a408b323" target="_blank"><img src="Assets/linkedin_w.png" alt="LinkedIn" class="icon"></a>
+            <a href="mailto:sarthakbadoni.contact@gmail.com"><img src="Assets/mail_w.png" alt="Email" class="icon"></a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2025 Sarthak Badoni. All rights reserved.
+    </div>
+</footer>
+
+<script>
+document.getElementById('menuBtn').addEventListener('click', function() {
+    document.getElementById('dropdownMenu').classList.toggle('show');
+});
+
+window.addEventListener('click', function(e) {
+    if (!document.getElementById('menuBtn').contains(e.target) &&
+        !document.getElementById('dropdownMenu').contains(e.target)) {
+        document.getElementById('dropdownMenu').classList.remove('show');
+    }
+});
+</script>
+
+</body>
+</html>

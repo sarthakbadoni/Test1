@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects | Sarthak Badoni</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        body {
+            background-color: #d5d5d5;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #232323;
+        }
+
+        header {
+            background-color: #002349;
+            padding: 25px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 2.8rem;
+            margin: 0;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+        }
+
+        .projects-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .project-item {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 14px;
+        }
+
+        .project-gallery img {
+            width: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease;
+        }
+
+        .project-gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        .project-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #232323;
+        }
+
+        .project-description {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            color: #444;
+            text-align: justify;
+        }
+
+        .project-skills {
+            margin-top: 6px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background-color: #957C3D;
+            color: white;
+            font-size: 0.85rem;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-right: 8px;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 700px) {
+            .project-title {
+                font-size: 1.5rem;
+            }
+            .project-description {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 class="xyz">Projects</h1>
+</header>
+
+<div class="projects-container">
+
+    <div class="project-item">
+        <h2 class="project-title">Campus Marketplace - A Student-Centric Secondhand Accessories Platform</h2>
+        <div class="project-gallery">
+            <img src="Assets/campus-marketplace/1.png" alt="Campus Marketplace Image 1"/>
+            <img src="Assets/campus-marketplace/3.png" alt="Campus Marketplace Image 2"/>
+            <img src="Assets/campus-marketplace/4.png" alt="Campus Marketplace Image 3"/>
+        </div>
+        <p class="project-description">
+            I created "Campus Marketplace" to make campus life a little easier and more sustainable for students like me.<br> Ever noticed how things like drafters and sheet holders are super important in the first year, but just gather dust after that? I wanted to help students connect and pass these items along-saving money and reducing waste in the process.<br>
+            I built the platform using PHP, HTML, CSS, and MySQL. It’s simple to use: students can list what they don’t need anymore or find essentials at a better price.
+            Campus Marketplace was my way of combining technology and empathy to solve a real problem on campus, and I loved seeing how thoughtful design can lead to practical impact.
+        </p>
+        <div class="project-skills">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">PHP</span>
+            <span class="skill-tag">MySQL</span>
+        </div>
+    </div>
+
+    <div class="project-item">
+        <h2 class="project-title">Ambulance Call</h2>
+        <div class="project-gallery">
+            <img src="Assets/ambulance call/1.jpg" alt="Ambulance Call Image 1"/>
+        </div>
+        <p class="project-description">
+           Ambulance Call is a location-based emergency response system designed to connect patients with the nearest medical facilities and ambulances in critical moments. The application retrieves the user’s exact GPS coordinates (latitude & longitude), displays a list of nearby hospitals, and allows the user to instantly send patient details to the nearest ambulance service with a single tap.<br>
+            This project was developed using HTML, CSS, JavaScript, and Firebase for real-time data handling. It aims to provide a quick and efficient way to access emergency medical services, ensuring that help is always just a click away.<br>
+            The project was a part of the Hack-O-Holic 3.0 hackathon, where my team and I built this application under tight deadlines and high pressure. Although we didn’t take home a prize, the real win was the hands-on experience—we learned what it means to collaborate effectively, solve problems in the moment, and stay resilient through long coding sessions.
+        </p>
+        <div class="project-skills">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Firebase</span>
+        </div>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h3>Sarthak Badoni</h3>
+            <p>Building projects with passion & purpose.</p>
+        </div>
+        
+        <div class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-social">
+            <a href="https://github.com/sarthakbadoni" target="_blank"><img src="Assets/github_w.png" alt="GitHub" class="icon" ></a>
+            <a href="https://linkedin.com/in/sarthak-badoni-6a408b323" target="_blank"><img src="Assets/linkedin_w.png" alt="GitHub" class="icon" ></a>
+            <a href="mailto:sarthakbadoni.contact@gmail.com"><img src="Assets/mail_w.png" alt="GitHub" class="icon" ></a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        &copy; 2025 Sarthak Badoni. All rights reserved.
+    </div>
+</footer>
+
+</body>
+</html>

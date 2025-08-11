@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery - Sarthak Badoni</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .gallery-section {
+            background: linear-gradient(160deg, #88ABB5 0%, #5A7A8C 100%);
+            padding: 80px 20px;
+            position: relative;
+        }
+
+        .gallery-section::before {
+            content: "";
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .gallery-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+            backdrop-filter: blur(8px);
+            position: relative;
+            z-index: 1;
+        }
+
+        .gallery-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: bold;
+            color: #002349;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .gallery-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #ffffff, #002349);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.15);
+            background: #fff;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 1024px) {
+            .gallery-section {
+                padding: 60px 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-title {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+
+            .gallery-caption {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-title {
+                font-size: 1.8rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .gallery-caption {
+                opacity: 1;
+                transform: translateY(0);
+                background: rgba(0,0,0,0.65);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="gallery-section">
+            <div class="gallery-container">
+                <h2 class="gallery-title">My Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="Assets/ambulance call/1.jpg" alt="Project 1">
+                        <div class="gallery-caption">Project 1 - Ambulance Call</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Assets/Gallery/hackathon.jpg" alt="Hackathon">
+                        <div class="gallery-caption">Hackathon Moments</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Assets/campus-marketplace/1.png" alt="Campus Marketplace">
+                        <div class="gallery-caption">Campus Marketplace</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Assets/certificates/Let's Talk Hackathon.png" alt="Workshop">
+                        <div class="gallery-caption">Workshop Collaboration</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Assets/certificates/Full_Stack_Dev_101.jpg" alt="Workshop">
+                        <div class="gallery-caption">Workshop Collaboration</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Assets/certificates/Hack-O-Holic.png" alt="Hack-O-Holic">
+                        <div class="gallery-caption">Hack-O-Holic</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Assets/Gallery/1.jpg" alt="Hack-O-Holic">
+                        <div class="gallery-caption">Hack-O-Holic</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h3>Sarthak Badoni</h3>
+                <p>Building projects with passion & purpose.</p>
+            </div>
+            
+            <div class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-social">
+                <a href="https://github.com/sarthakbadoni" target="_blank"><img src="Assets/github_w.png" alt="GitHub" class="icon" ></a>
+                <a href="https://linkedin.com/in/sarthak-badoni-6a408b323" target="_blank"><img src="Assets/linkedin_w.png" alt="GitHub" class="icon" ></a>
+                <a href="mailto:sarthakbadoni.contact@gmail.com"><img src="Assets/mail_w.png" alt="GitHub" class="icon" ></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2025 Sarthak Badoni. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
