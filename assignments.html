@@ -32,7 +32,7 @@
   .assignment-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 4px; }
   .assignment-desc { font-size: 0.9rem; color: #415A77; }
 
-  /* Modal */
+  
   .modal {
     display: none; position: fixed; z-index: 99; left: 0; top: 0;
     width: 100vw; height: 100vh; background: rgba(0, 35, 73, 0.95);
@@ -49,7 +49,7 @@
     max-height: 76vh; border-radius: 7px; background: #000; max-width: 100%;
   }
 
-  /* Navigation + Close buttons */
+  
   .modal-prev, .modal-next, .modal-close {
     position: absolute;
     border: none;
@@ -91,7 +91,7 @@
   <h1>My Assignments</h1>
   <div class="assignments-grid">
     
-    <!-- Example with multiple local images -->
+    
     <div class="assignment-item" 
          data-media='[{"type":"image","src":"Assets/Assignment/Linkedin1.png"},
                       {"type":"image","src":"Assets/Assignment/Linkedin2.png"},
@@ -116,7 +116,7 @@
       </div>
     </div>
 
-    <!-- Example with multiple videos -->
+    
     <div class="assignment-item"
          data-media='[{"type":"video","src":"Assets/rickroll.mp4"}]'>
       <img class="assignment-thumb" src="Assets/IntroThumb.png" alt="">
@@ -131,11 +131,11 @@
   </div>
 </div>
 
-<!-- Modal -->
+
 <div class="modal" id="modal-viewer">
   <div class="modal-content" id="modal-content">
     <button class="modal-prev" id="modal-prev">&#10094;</button>
-    <!-- Media gets injected here -->
+    
     <button class="modal-next" id="modal-next">&#10095;</button>
   </div>
   <button class="modal-close" id="modal-close">&times;</button>
@@ -162,7 +162,7 @@ items.forEach(item => {
 });
 
 function openMedia(index){
-  // Keep prev/next buttons in place
+  
   [...content.querySelectorAll('img,video')].forEach(el => el.remove());
   let media = currentMedia[index];
   let el;
@@ -175,7 +175,7 @@ function openMedia(index){
     el = document.createElement('img');
     el.src = media.src;
   }
-  content.insertBefore(el, btnNext); // Insert before the next button so buttons remain on sides
+  content.insertBefore(el, btnNext); 
 }
 
 btnClose.addEventListener('click', closeModal);
